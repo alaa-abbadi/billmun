@@ -17,8 +17,8 @@ const nextConfig = {
   httpAgentOptions: {
     keepAlive: true,
   },
-  // Asset optimization
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.billmun.com' : undefined,
+  // Asset optimization (optional CDN; do not force on Vercel)
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || undefined,
   // Headers for caching
   async headers() {
     return [
